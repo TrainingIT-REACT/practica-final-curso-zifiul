@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 import { HistoricContext } from '../../reducers/historic.reducer';
-import { AlbumsList } from '../albums/albums_list';
+import { AlbumsList } from '../albums/albumsList';
 import { RecomendedSongsList } from './recommendedSongsList';
 import { IAlbum } from '../albums/albums.interfaces';
 import { ISong } from '../songs/songs.interfaces';

@@ -1,7 +1,6 @@
 module.exports = {
     roots: ['<rootDir>'],
-    preset: "ts-jest",
-    testEnvironment: "node",
+    preset: 'jest-puppeteer',
     transform: {
       '.+\\.(j|t)sx?$': 'ts-jest'
     },
@@ -10,6 +9,6 @@ module.exports = {
     clearMocks: true,
     coverageDirectory: "coverage",
     setupFilesAfterEnv: [
-        "<rootDir>/src/setupTests.ts"
+        "<rootDir>/src/jest.setup.ts"
     ]
 };

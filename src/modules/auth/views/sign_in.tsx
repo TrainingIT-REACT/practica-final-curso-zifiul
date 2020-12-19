@@ -113,7 +113,7 @@ const SignIn: FC = () => {
             <div className={classes.wallpaper}>
                 <div className={classes.paper}>
                     <div className={classes.imageContainer}>
-                        <img
+                        <img                            
                             src={graficologin}
                             alt="Music Vintage"
                             aria-hidden={false}
@@ -127,6 +127,7 @@ const SignIn: FC = () => {
                         {passwordField}
                         <div className={classes.formAction}>
                             <Button
+                                id="singIn"
                                 type="submit"
                                 variant="contained"
                                 fullWidth={true}
@@ -135,7 +136,7 @@ const SignIn: FC = () => {
                             </Button>
                         </div>
                         <div className={clsx(classes.white, classes.forgot)}>
-                            <Typography>powered by Music Vintage</Typography>
+                            <Typography id="powered">powered by Music Vintage</Typography>
                         </div>
                     </form>
                 </div>
