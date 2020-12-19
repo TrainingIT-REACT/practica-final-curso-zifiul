@@ -1,6 +1,6 @@
 import { Grid, makeStyles } from '@material-ui/core';
 import React, { FC, useCallback, useContext, useState } from 'react';
-import { SongCard } from './songCard';
+import { SongCard } from './song_card';
 import { ISong } from './songs.interfaces';
 import { IAlbum } from '../albums/albums.interfaces';
 import { Player } from '../../components/player';
@@ -33,7 +33,7 @@ export const SongsList: FC<ISongList> = ({ album }) => {
     return (
         <Grid container>
             <Grid container item spacing={2} className={classes.root}>
-                {album.songs.map((song: ISong) => (
+                {album.songs ? album.songs.map((song: ISong) => (
                     <Grid container item xs key={'grid_' + song.id}>
                         <SongCard 
                             key={'song_' + song.id} 
@@ -41,7 +41,7 @@ export const SongsList: FC<ISongList> = ({ album }) => {
                             onPlaySong={handlePlaySong}
                         />
                     </Grid>
-                ))}
+                )) : null}
             </Grid>
             <Grid container item className={playerHidden ? clsx(classes.root, classes.hidden) : classes.root}>
                 <Player src={srcPlayer} />

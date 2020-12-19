@@ -56,6 +56,7 @@ exports[`UserAccount Render should add the correct HTML elements 1`] = `
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-disableElevation"
+        id="updateButton"
         tabindex="0"
         type="button"
       >

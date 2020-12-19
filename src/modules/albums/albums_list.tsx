@@ -1,6 +1,6 @@
 import { Grid, makeStyles } from '@material-ui/core';
 import React, { FC } from 'react';
-import { AlbumCard } from './albumCard';
+import { AlbumCard } from './album_card';
 import { IAlbum } from './albums.interfaces';
 
 // CSS 

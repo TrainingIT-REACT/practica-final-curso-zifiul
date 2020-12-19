@@ -7,12 +7,12 @@ import {
     Typography,
 } from '@material-ui/core';
 import styles from '../assets/styles/header.styles';
-import { AppBarMobile } from './app-bar';
+import { AppBarMobile } from './app_bar';
 import clsx from 'clsx';
 import logoBarra from '../assets/images/audio-cassette.png';
 import { MoreVert } from '@material-ui/icons';
 import { AuthContext } from '../reducers/auth.reducer';
-import { IconMenu } from './icon-menu';
+import { IconMenu } from './icon_menu';
 
 const useStyles = makeStyles(styles);
 

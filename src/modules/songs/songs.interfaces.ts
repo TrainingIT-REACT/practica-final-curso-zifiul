@@ -3,7 +3,7 @@ export interface ISong {
     name: string;
     artist: string;
     audio: string;
-    cover: string;
+    cover?: string;
     duration: string;
     albumId: number;
 }

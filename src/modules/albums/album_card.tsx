@@ -44,10 +44,11 @@ export const AlbumCard: FC<IAlbumCard> = ({ album }) => {
                     title={album.name}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography id="albumName" gutterBottom variant="h5" component="h2">
                         {album.name}
                     </Typography>
                     <Typography
+                        id="artistName"
                         variant="body2"
                         color="textSecondary"
                         component="p">

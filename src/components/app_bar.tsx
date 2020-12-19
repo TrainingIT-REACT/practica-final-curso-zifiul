@@ -11,7 +11,7 @@ import Menu from '@material-ui/icons/Menu';
 import { MoreVert } from '@material-ui/icons';
 import styles from '../assets/styles/header.styles';
 import { PageContext } from '../reducers/page.reducer';
-import { IconMenu } from './icon-menu';
+import { IconMenu } from './icon_menu';
 import { AuthContext } from '../reducers/auth.reducer';
 
 const useStyles = makeStyles(styles);

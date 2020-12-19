@@ -40,6 +40,7 @@ const UserAccount = (): React.ReactElement => {
                 <Grid container item xs={12} sm={4} md={4} lg={4} xl={2} key='fullName'>
                     <TextField
                         id="name"
+                        key="name"
                         label="Nombre"
                         className={classes.text}
                         defaultValue={name}
@@ -48,7 +49,7 @@ const UserAccount = (): React.ReactElement => {
                     />
                 </Grid>
                 <Grid container item xs={12} sm={4} md={4} lg={4} xl={2} key='submit'>
-                    <Button color="primary" disableElevation onClick={handleSubmit}>
+                    <Button id="updateButton" key="updateButton" color="primary" disableElevation onClick={handleSubmit}>
                         Actualizar
                     </Button>
                 </Grid>

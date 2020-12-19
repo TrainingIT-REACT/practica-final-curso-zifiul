@@ -4,6 +4,6 @@ export interface IAlbum {
     id: number;
     name: string;
     artist: string;
-    cover: string;
-    songs: ISong[];
+    cover?: string;
+    songs?: ISong[];
 }

@@ -1,39 +1,39 @@
 import React from 'react';
-import { render, mount, configure } from 'enzyme';
-
+import { render, mount, configure, shallow } from 'enzyme';
 import UserAccount from '../index';
+
 
 describe(UserAccount, () => {
   describe("Render", () => {
     let wrapper: any;
 
-    // Inicializamos el componente en un beforeEach para
-    // evitar tener que repetir esta línea en cada test
     beforeEach(() => {
       wrapper = render(<UserAccount />);
     });
 
     it('should add the correct HTML elements', () => {
-      // Comprobamos los distintos aspectos de HTML
       expect(wrapper).toMatchSnapshot();
     });
 
-    describe('promise', () => { 
-      it('should resolve', () => { 
-        return Promise.resolve('test').then(data => { 
-          expect(data).toBe('test') 
-        }); 
-      }); 
+    it('should have a text field with id name', () => {
+      expect(wrapper.find('#name').length).toEqual(1);
     });
+
+    it('should have a button with updateButton name', () => {
+      expect(wrapper.find('#updateButton').length).toEqual(1);
+    });    
   });
 
   describe("Features", () => {
-    let wrapper;
+    let wrapper: any;
 
-    // Inicializamos el componente en un beforeEach para
-    // evitar tener que repetir esta línea en cada test
     beforeEach(() => {
-      wrapper = mount(<UserAccount />);
-    });    
-  });
+      wrapper = shallow(<UserAccount />);      
+    });
+
+    it('should not include any name by default', () => {
+      // Comprobamos el texto
+      expect(wrapper.find('#name').text()).toBe('');
+    });        
+  });  
 });

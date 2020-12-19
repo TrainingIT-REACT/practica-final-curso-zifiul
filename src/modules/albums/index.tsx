@@ -8,8 +8,8 @@ import { IAlbum } from './albums.interfaces';
 import { getAlbums } from '../../actions/albums';
 
 // Componentes
-import AlbumsList from './albumsList';
-import FullScreenLoader from '../../components/suspense-loader';
+import AlbumsList from './albums_list';
+import FullScreenLoader from '../../components/suspense_loader';
 
 interface IAlbumsProps {
     getAlbums?: any;

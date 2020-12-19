@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // Interfaces
 import { IAlbum } from '../albums/albums.interfaces';
 // Componentes
-import SongsList from './songsList';
+import SongsList from './songs_list';
 // CSS
 import "./index.css";
 

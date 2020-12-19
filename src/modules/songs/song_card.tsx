@@ -20,7 +20,7 @@ const useStyles = makeStyles(styles);
 interface ISongCardProps {
     album: IAlbum;
     song: ISong;
-    onPlaySong: (song: ISong) => void;
+    onPlaySong?: ((song: ISong) => void) | null;
 }
 
 export const SongCard: FC<ISongCardProps> = ({ album, song, onPlaySong }) => {
@@ -30,17 +30,17 @@ export const SongCard: FC<ISongCardProps> = ({ album, song, onPlaySong }) => {
         <Card className={classes.root}>
             <div className={classes.details}>
                 <CardContent className={classes.content}>
-                    <Typography component="h6" variant="h6">
+                    <Typography id="songName" component="h6" variant="h6">
                         {song.name}
                     </Typography>
-                    <Typography variant="subtitle1" color="textSecondary">
+                    <Typography id="duration" variant="subtitle1" color="textSecondary">
                         {song.duration}
                     </Typography>                    
                 </CardContent>
                 <div className={classes.controls}>
                     <IconButton 
                         aria-label="play/pause" 
-                        onClick={(e: any) => onPlaySong(song)}>
+                        onClick={() => onPlaySong ? onPlaySong(song) : null}>
                         <PlayArrowIcon className={classes.playIcon} />
                     </IconButton>          
                 </div>                
