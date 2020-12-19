@@ -5,6 +5,7 @@ import { ISong } from '../songs/songs.interfaces';
 import { Player } from '../../components/player';
 import { HistoricContext } from '../../reducers/historic.reducer';
 import clsx from 'clsx';
+import * as Constants from '../../constants';
 
 // CSS 
 import styles from '../../assets/styles/card.styles';
@@ -24,7 +25,7 @@ export const RecomendedSongsList: FC<ISongList> = ({ songs }) => {
     const handlePlaySong = useCallback((song: ISong) => {                
         setPlayerHidden(false);        
         setTimeout(() => window.scrollTo(0,document.body.scrollHeight), 1000);
-        setSrcPlayer(song.audio);
+        setSrcPlayer(`${Constants.API_URL}${song.audio}`);
         historicDispatcher({ type: 'REGISTER_SONG', payload: { song } });
     }, [historicDispatcher]);
 

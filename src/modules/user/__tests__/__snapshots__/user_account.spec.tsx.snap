@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserAccount Render should add the correct HTML elements 1`] = `
+<div
+  class="MuiPaper-root makeStyles-paper-1 MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <span
+    class="MuiTypography-root makeStyles-title-3 MuiTypography-body1"
+  >
+    Perfil de Usuario
+  </span>
+  <div
+    class="MuiGrid-root makeStyles-root-2 MuiGrid-container MuiGrid-spacing-xs-2"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-4 MuiGrid-grid-lg-4 MuiGrid-grid-xl-2"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root makeStyles-text-4"
+      >
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+          data-shrink="false"
+          for="name"
+          id="name-label"
+        >
+          Nombre
+        </label>
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiOutlinedInput-input"
+            id="name"
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden="true"
+            class="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="PrivateNotchedOutline-legendLabelled-7"
+            >
+              <span>
+                Nombre
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-4 MuiGrid-grid-lg-4 MuiGrid-grid-xl-2"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-disableElevation"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Actualizar
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
