@@ -15,6 +15,7 @@ import { useAuthReducer, AuthContext } from '../reducers/auth.reducer';
 import Protected from '../components/protected';
 import AuthIndex from '../modules/auth';
 import UserAccount from '../modules/user';
+import NotFound from '../modules/404';
 import { useHistoricReducer, HistoricContext } from '../reducers/historic.reducer';
 
 // Stores
@@ -35,16 +36,17 @@ const App: FC = () => {
 
     return (
         <GlobalThemeProvider>
-            <AuthContext.Provider value={userReducer}>
-                <Helmet>
-                    <title>Music Vintage</title>
-                </Helmet>
-                <Suspense fallback={<FullScreenLoader />}>
-                    <SnackbarProvider maxSnack={3}>
-                        <CssBaseline />
-                        <BrowserRouter>
+            <BrowserRouter>
+                <AuthContext.Provider value={userReducer}>
+                    <Helmet>
+                        <title>Music Vintage</title>
+                    </Helmet>
+                    <Suspense fallback={<FullScreenLoader />}>
+                        <SnackbarProvider maxSnack={3}>
+                            <CssBaseline />
                             <Switch>
-                                <Route path="/auth" component={AuthIndex} />
+                                <Route path="/auth" component={AuthIndex} />                                
+                                <Route path="/404" component={NotFound} />
                                 <Protected>
                                     <PageContext.Provider value={menuReducer}>
                                         <Provider store={store}>
@@ -52,7 +54,7 @@ const App: FC = () => {
                                                 <HeaderApp />
                                                 <MenuDrawer />
                                                 <div className={classes.content}>
-                                                    <Route path="/" exact={true}>
+                                                    <Route exact path="/">
                                                         <Redirect to="/home" />
                                                     </Route>
                                                     <Route
@@ -60,29 +62,30 @@ const App: FC = () => {
                                                         component={HomeIndex}
                                                     />
                                                     <Route
+                                                        exact={true} 
                                                         path="/albums"
                                                         component={AlbumsIndex}
                                                     />
                                                     <Route
+                                                        exact={true} 
                                                         path="/songs/:albumId"
                                                         component={Songs}
-                                                        rend
                                                     />
                                                     <Route
+                                                        exact={true} 
                                                         path="/user"
                                                         component={UserAccount}
-                                                        rend
                                                     />
                                                 </div>
                                             </HistoricContext.Provider>
                                         </Provider>
                                     </PageContext.Provider>
-                                </Protected>
-                            </Switch>
-                        </BrowserRouter>
-                    </SnackbarProvider>
-                </Suspense>
-            </AuthContext.Provider>
+                                </Protected>                                
+                            </Switch>                            
+                        </SnackbarProvider>
+                    </Suspense>
+                </AuthContext.Provider>
+            </BrowserRouter>
         </GlobalThemeProvider>
     );
 };

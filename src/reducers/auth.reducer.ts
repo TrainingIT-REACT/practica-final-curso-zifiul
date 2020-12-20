@@ -2,7 +2,6 @@ import React from 'react';
 
 export interface IAuthState {
     fullName?: string | null;
-    authenticated: boolean;
 }
 
 export interface IUser {
@@ -20,30 +19,28 @@ export const AuthContext = React.createContext<
 const authReducer = (state: IAuthState, action: AuthAction): IAuthState => {
     switch (action.type) {
         case 'sign-in': {
+            localStorage.setItem('isAuthenticated', 'true');
             return {
-                ...state,
-                authenticated: true,
+                ...state,                
                 fullName: 'Perico de los Palotes',
             };
         }
-        case 'change-name': {
+        case 'change-name': {            
             return {
                 ...state,
-                authenticated: true,
                 fullName: action.payload.fullName,
             };
         }
         case 'close-session':
+            localStorage.removeItem('isAuthenticated');
             return {
                 ...state,
-                authenticated: false,
                 fullName: null,
             };
     }
 };
 
-const initialState: IAuthState = {
-    authenticated: false,
+const initialState: IAuthState = {    
     fullName: null,
 };
 

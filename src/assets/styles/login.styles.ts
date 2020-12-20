@@ -1,6 +1,6 @@
 import { createMuiTheme, Theme } from '@material-ui/core';
 import { StyleRules } from '@material-ui/styles';
-import loginBackground from '../images/login-background.png';
+import background from '../images/background.png';
 
 const styles = (theme: Theme): StyleRules => ({
     wallpaper: {
@@ -69,7 +69,7 @@ export const theme = createMuiTheme({
                 html: {
                     height: '100%',
                     width: '100%',
-                    backgroundImage: `url(${loginBackground})`,
+                    backgroundImage: `url(${background})`,
                 },
             },
         },

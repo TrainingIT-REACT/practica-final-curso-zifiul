@@ -7,7 +7,8 @@ const Protected: FC = ({ children }: { children?: React.ReactNode }) => {
     const [authState] = useContext(AuthContext);
 
     useEffect(() => {
-        if (!authState.authenticated) {
+        const isAuthenticated = localStorage.getItem('isAuthenticated');
+        if (!isAuthenticated) {
             history.push('/auth/sign-in');
         }
     }, [history, authState]);
